@@ -4,11 +4,11 @@
   "description": "A small framework built on top of p5js for making tiling wallpapers with javascript. This framework is a part of the \"Creative Coding projects\" youtube channel.",
   "homepage": "https://www.youtube.com/channel/UCQJBw4IgWV9Tp3CNgT5YtwA",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/CreativeCodingProjects/parametricWallpaperJS.git"
+    "type": "git",
+    "url": "https://github.com/CreativeCodingProjects/parametricWallpaperJS.git"
   },
   "main": "index.js",
-  "keywords":[
+  "keywords": [
     "p5js",
     "wallpaper",
     "patterns",
@@ -36,7 +36,7 @@
     "build": "run-p prepare copy_p5 copy_sample_code create_assets_folder",
     "prepare": "webpack --mode=production",
     "copy_p5": "cpx ./node_modules/p5/lib/p5.min.js ./build/libraries/",
-    "copy_sample_code": "cpx ./sample_code/index.html ./build/ && cpx ./sample_code/my_wallpaper.js ./build/",
+    "copy_sample_code": "cpx ./sample_code/index.html ./build/ && cpx ./sample_code/my_wallpaper.js ./build/ && cpx ./sample_code/setup_optons.txt ./build/",
     "create_assets_folder": "mkdirp ./build/assets"
   },
   "dependencies": {

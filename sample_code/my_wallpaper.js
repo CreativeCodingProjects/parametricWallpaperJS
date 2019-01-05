@@ -1,10 +1,17 @@
 //your parameter variables go here!
-var thingyWidth  = 100;
-var thingyHeight = 100;
+var thingy_width  = 20;
+var thingy_height = 20;
 
 function setup_wallpaper(pWallpaper){
   pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.show_guide(true);//set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 100;
+  pWallpaper.grid_settings.cell_height = 100;
+  pWallpaper.grid_settings.row_offset  = 50;
+
 }
 
 function wallpaper_background(){
@@ -12,5 +19,5 @@ function wallpaper_background(){
 }
 
 function my_symbol(x, y){
-  rect(x,y,thingyWidth, thingyHeight);
+  rect(x,y,thingy_width, thingy_height);
 }

@@ -1,19 +1,26 @@
-//import globals      from './PGlobals.js'
+import GridSettings from './PGridSettings.js'
 //import PImageLoader from './PImageLoader.js'
 
 export default class ParametricWallpaper{
 
   constructor(){
+    this.grid_settings = new GridSettings();
   }
 
   resolution(resolution){
+    if(resolution === undefined){
+      return this._resolution;
+    }
     this._resolution = resolution();
     console.log(this._resolution);
     setup_new_canvas(this._resolution.x, this._resolution.y);
   }
 
-  grid_type(type){
-    this._grid_type = type;
+  show_guide(do_show){
+    if(do_show === undefined){
+      return this._show_guide;
+    }
+    this._show_guide = do_show;
   }
 
   output_mode(output_function){
@@ -21,7 +28,7 @@ export default class ParametricWallpaper{
   }
 
   draw(){
-    this._output_function(this._grid_type);
+    this._output_function();
   }
 
 }
