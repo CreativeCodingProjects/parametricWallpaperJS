@@ -1,0 +1,47 @@
+{
+  "name": "parametricWallpaperJS",
+  "version": "0.0.1",
+  "description": "A small framework built on top of p5js for making tiling wallpapers with javascript. This framework is a part of the \"Creative Coding projects\" youtube channel.",
+  "homepage": "https://www.youtube.com/channel/UCQJBw4IgWV9Tp3CNgT5YtwA",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/CreativeCodingProjects/parametricWallpaperJS.git"
+  },
+  "main": "index.js",
+  "keywords":[
+    "p5js",
+    "wallpaper",
+    "patterns",
+    "parametric",
+    "design",
+    "art",
+    "creative coding"
+  ],
+  "author": "Ben Jack",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0-beta.6",
+    "cpx": "^1.5.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.1.3",
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.config.dev.js --mode=development -d",
+    "build": "run-p prepare copy_p5 copy_sample_code create_assets_folder",
+    "prepare": "webpack --mode=production",
+    "copy_p5": "cpx ./node_modules/p5/lib/p5.min.js ./build/libraries/",
+    "copy_sample_code": "cpx ./sample_code/index.html ./build/ && cpx ./sample_code/my_wallpaper.js ./build/",
+    "create_assets_folder": "mkdirp ./build/assets"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "babel-preset-env": "^1.7.0",
+    "p5": "^0.7.2"
+  }
+}
